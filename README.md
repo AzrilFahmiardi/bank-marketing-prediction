@@ -16,10 +16,10 @@ Dataset: [UCI Bank Marketing](https://archive.ics.uci.edu/dataset/222/bank+marke
 
 ## Model development
 
-`ml/notebooks/01_uts_baseline.ipynb` is the midterm baseline. `ml/notebooks/02_uas_improved.ipynb` is the final version:
+`ml/notebooks/model_development.ipynb` trains and evaluates the models:
 
 - Chronological split (first 80% train, last 20% test) and rolling-window validation
-- Random Forest, HistGradientBoosting, LightGBM, and a soft-voting ensemble added to the baseline models
+- Logistic Regression, Decision Tree, SVM, Random Forest, HistGradientBoosting, LightGBM, and a soft-voting ensemble
 - Evaluation by AUC, ALIFT, PR-AUC, and share of positives reached when only the top-k% of customers are called
 - Permutation importance, Platt calibration, and export of `model.joblib` and `metadata.json`
 
@@ -28,7 +28,7 @@ Selected model: Random Forest, out-of-time AUC 0.728 and ALIFT 0.658. Calling th
 ```bash
 conda activate ml
 pip install -r ml/requirements.txt
-cd ml/notebooks && jupyter nbconvert --to notebook --execute --inplace 02_uas_improved.ipynb
+cd ml/notebooks && jupyter nbconvert --to notebook --execute --inplace model_development.ipynb
 scripts/sync_metadata.sh
 ```
 

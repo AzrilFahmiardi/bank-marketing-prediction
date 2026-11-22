@@ -36,7 +36,6 @@ export interface Metadata {
     rolling_folds: { fold: number; test_yes_rate: number; test_euribor3m: number }[];
   };
   models: ModelMeta[];
-  uts_baseline: { name: string; AUC: number; ALIFT: number }[];
   capacity: CapacityRow[];
   importance: { feature: string; auc_drop: number }[];
   eda: {

@@ -14,19 +14,22 @@ const items = [
 
 export function Nav() {
   const path = usePathname();
+  const link = (href: string, label: string, side: boolean) => {
+    const active = href === "/" ? path === "/" : path.startsWith(href);
+    return (
+      <Link key={href} href={href} className={clsx("rounded-md px-2.5 py-1.5 text-sm", side && "block", active ? "bg-soft font-medium text-text" : "text-muted hover:bg-soft/60 hover:text-text")}>{label}</Link>
+    );
+  };
   return (
-    <header className="border-b border-border bg-surface">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-8 gap-y-1 px-4 py-3 sm:px-6">
-        <Link href="/" className="text-sm font-semibold">Bank Marketing</Link>
-        <nav className="-mx-1 flex gap-1 overflow-x-auto" aria-label="Navigasi utama">
-          {items.map(({ href, label }) => {
-            const active = href === "/" ? path === "/" : path.startsWith(href);
-            return (
-              <Link key={href} href={href} className={clsx("rounded px-2.5 py-1.5 text-sm", active ? "bg-soft font-medium text-text" : "text-muted hover:text-text")}>{label}</Link>
-            );
-          })}
-        </nav>
-      </div>
-    </header>
+    <>
+      <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col border-r border-border bg-surface px-3 py-5 lg:flex">
+        <Link href="/" className="mb-6 px-2.5 text-sm font-semibold">Bank Marketing</Link>
+        <nav className="flex flex-col gap-0.5" aria-label="Navigasi utama">{items.map((i) => link(i.href, i.label, true))}</nav>
+      </aside>
+      <header className="border-b border-border bg-surface lg:hidden">
+        <div className="px-4 pt-3 text-sm font-semibold">Bank Marketing</div>
+        <nav className="flex gap-1 overflow-x-auto px-3 py-2" aria-label="Navigasi utama">{items.map((i) => link(i.href, i.label, false))}</nav>
+      </header>
+    </>
   );
 }

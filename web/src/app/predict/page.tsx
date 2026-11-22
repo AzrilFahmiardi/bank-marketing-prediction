@@ -8,7 +8,8 @@ import { meta } from "@/lib/meta";
 import type { PredictResult } from "@/lib/types";
 
 type Form = Record<string, string | number>;
-const defaults: Form = Object.fromEntries(meta.features.map((f) => [f.name, f.default]));
+const typical: Form = Object.fromEntries(meta.features.map((f) => [f.name, f.default]));
+const empty: Form = Object.fromEntries(meta.features.map((f) => [f.name, ""]));
 
 const GROUPS: { title: string; fields: string[] }[] = [
   { title: "Profil", fields: ["age", "job", "marital", "education"] },
@@ -17,14 +18,14 @@ const GROUPS: { title: string; fields: string[] }[] = [
   { title: "Ekonomi", fields: ["emp.var.rate", "cons.price.idx", "cons.conf.idx", "euribor3m", "nr.employed"] },
 ];
 
-const PRESETS: { name: string; patch: Form }[] = [
-  { name: "Umum", patch: {} },
-  { name: "Prospek kuat", patch: { age: 29, job: "student", education: "university.degree", contact: "cellular", month: "mar", campaign: 1, pdays: 4, previous: 1, poutcome: "success", "emp.var.rate": -1.8, "cons.price.idx": 92.9, "cons.conf.idx": -46.2, euribor3m: 1.05, "nr.employed": 5099.1 } },
-  { name: "Prospek lemah", patch: { age: 45, job: "blue-collar", education: "basic.9y", contact: "telephone", month: "may", campaign: 6, "emp.var.rate": 1.4, euribor3m: 4.96, "nr.employed": 5228.1 } },
+const EXAMPLES: { name: string; desc: string; values: Form }[] = [
+  { name: "Nasabah umum", desc: "Profil tipikal dari data", values: typical },
+  { name: "Prospek kuat", desc: "Mahasiswa, pernah berhasil dihubungi, suku bunga rendah", values: { ...typical, age: 29, job: "student", education: "university.degree", contact: "cellular", month: "mar", campaign: 1, pdays: 4, previous: 1, poutcome: "success", "emp.var.rate": -1.8, "cons.price.idx": 92.9, "cons.conf.idx": -46.2, euribor3m: 1.05, "nr.employed": 5099.1 } },
+  { name: "Prospek lemah", desc: "Pekerja, kontak telepon, kontak ke-6, suku bunga tinggi", values: { ...typical, age: 45, job: "blue-collar", education: "basic.9y", contact: "telephone", month: "may", campaign: 6, "emp.var.rate": 1.4, euribor3m: 4.96, "nr.employed": 5228.1 } },
 ];
 
 export default function PredictPage() {
-  const [form, setForm] = useState<Form>(defaults);
+  const [form, setForm] = useState<Form>(empty);
   const [res, setRes] = useState<PredictResult | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -44,11 +45,6 @@ export default function PredictPage() {
       <PageHeader title="Prediksi satu nasabah" />
       <div className="grid gap-4 lg:grid-cols-5">
         <form onSubmit={submit} className="space-y-4 lg:col-span-3">
-          <div className="flex flex-wrap gap-2">
-            {PRESETS.map((p) => (
-              <Button key={p.name} type="button" variant="ghost" className="!px-3 !py-1.5" onClick={() => setForm({ ...defaults, ...p.patch })}>{p.name}</Button>
-            ))}
-          </div>
           {GROUPS.map((g) => (
             <Card key={g.title} title={g.title}>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -58,7 +54,8 @@ export default function PredictPage() {
                     <label key={n} className="block">
                       <span className="mb-1 block text-xs text-muted">{label(n)}</span>
                       {f.type === "categorical" ? (
-                        <select className={inputCls} value={String(form[n])} onChange={(e) => set(n, e.target.value)}>
+                        <select className={inputCls} required value={String(form[n])} onChange={(e) => set(n, e.target.value)}>
+                          <option value="" disabled>Pilih</option>
                           {f.options.map((o) => <option key={o} value={o}>{o}</option>)}
                         </select>
                       ) : (
@@ -71,12 +68,27 @@ export default function PredictPage() {
               </div>
             </Card>
           ))}
-          <Button type="submit" disabled={busy}>{busy ? "Menghitung..." : "Hitung"}</Button>
+          <div className="flex gap-2">
+            <Button type="submit" disabled={busy}>{busy ? "Menghitung..." : "Hitung"}</Button>
+            <Button type="button" variant="ghost" onClick={() => { setForm(empty); setRes(null); setErr(null); }}>Kosongkan</Button>
+          </div>
           {err && <ErrorNote>{err}</ErrorNote>}
         </form>
 
         <div className="lg:col-span-2">
           <div className="sticky top-4 space-y-4">
+            <Card title="Coba contoh">
+              <ul className="-my-1 divide-y divide-border/60">
+                {EXAMPLES.map((x) => (
+                  <li key={x.name}>
+                    <button type="button" onClick={() => { setForm({ ...x.values }); setRes(null); setErr(null); }} className="block w-full py-2.5 text-left hover:text-muted">
+                      <span className="block text-sm font-medium">{x.name}</span>
+                      <span className="block text-xs text-muted">{x.desc}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </Card>
             <Card title="Hasil">
               {!res ? <p className="text-sm text-muted">Belum ada hasil.</p> : (
                 <div>

@@ -89,21 +89,9 @@ export default function ModelsPage() {
         </div>
       </Card>
 
-      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+      <div className="mt-4">
         <Card title="Fitur paling berpengaruh (penurunan AUC)">
           <HBar data={meta.importance.slice(0, 10).map((i) => ({ name: label(i.feature), value: i.auc_drop })).reverse()} />
-        </Card>
-        <Card title="Pembanding hasil UTS">
-          <table className="w-full text-sm">
-            <thead><tr className="border-b border-border"><th className={th}>Model</th><th className={`${th} text-right`}>AUC UTS</th><th className={`${th} text-right`}>AUC kini</th></tr></thead>
-            <tbody>
-              {meta.uts_baseline.map((u) => {
-                const now = meta.models.find((m) => m.name.startsWith(u.name.split(" ")[0]));
-                return <tr key={u.name} className="border-b border-border/60"><td className="py-2">{u.name}</td><td className="num text-right">{num(u.AUC)}</td><td className="num text-right">{now ? num(now.holdout.AUC) : "-"}</td></tr>;
-              })}
-              <tr><td className="py-2 font-medium">{selectedModel.name}</td><td className="num text-right text-muted">-</td><td className="num text-right font-medium">{num(selectedModel.holdout.AUC)}</td></tr>
-            </tbody>
-          </table>
         </Card>
       </div>
     </>
