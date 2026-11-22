@@ -1,7 +1,6 @@
 "use client";
-import { Download, FileUp, Loader2 } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
-import { Badge, Button, Card, ErrorNote, PageHeader, Stat } from "@/components/ui";
+import { Button, Card, ErrorNote, PageHeader, Stat, Tag, th } from "@/components/ui";
 import { api } from "@/lib/api";
 import { download, parseCsv, toCsv } from "@/lib/csv";
 import { int, pct } from "@/lib/format";
@@ -23,7 +22,7 @@ export default function BatchPage() {
       setRows(parseCsv(await f.text()));
       setRes(await api.batch(f));
     } catch (x) {
-      setErr(x instanceof TypeError ? "API tidak terjangkau. Jika server baru bangun dari tidur, coba lagi beberapa detik lagi." : (x as Error).message);
+      setErr(x instanceof TypeError ? "API tidak terjangkau. Coba lagi beberapa detik lagi." : (x as Error).message);
     } finally { setBusy(false); }
   }
 
@@ -44,20 +43,19 @@ export default function BatchPage() {
 
   return (
     <>
-      <PageHeader title="Skoring file CSV" subtitle="Unggah daftar nasabah, lalu tentukan berapa persen nasabah dengan skor tertinggi yang akan ditelepon sesuai kapasitas tim." />
+      <PageHeader title="Skoring file CSV" />
       <Card>
         <div
           onDragOver={(e) => e.preventDefault()}
           onDrop={(e) => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) run(f); }}
-          className="flex flex-col items-center gap-3 rounded-lg border border-dashed border-border px-4 py-10 text-center">
-          <FileUp className="text-muted" />
-          <p className="text-sm">{file ? file.name : "Seret file CSV ke sini atau pilih dari komputer"}</p>
-          <div className="flex flex-wrap justify-center gap-2">
-            <Button onClick={() => input.current?.click()} disabled={busy}>{busy && <Loader2 size={16} className="animate-spin" />}Pilih file</Button>
-            <Button variant="ghost" onClick={template}><Download size={16} />Unduh template</Button>
+          className="flex flex-col items-start gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <Button onClick={() => input.current?.click()} disabled={busy}>{busy ? "Memproses..." : "Pilih file CSV"}</Button>
+            <Button variant="ghost" onClick={template}>Unduh template</Button>
+            <span className="text-sm text-muted">{file ? file.name : "atau seret file ke sini"}</span>
           </div>
           <input ref={input} type="file" accept=".csv,text/csv" hidden onChange={(e) => { const f = e.target.files?.[0]; if (f) run(f); e.target.value = ""; }} />
-          <p className="max-w-xl text-xs leading-relaxed text-muted">Kolom wajib: {meta.features.map((f) => f.name).join(", ")}. Kolom lain (mis. duration, y, id) diabaikan. Maksimal 20.000 baris.</p>
+          <p className="text-xs text-muted">Maksimal 20.000 baris. Kolom duration dan y diabaikan.</p>
         </div>
         {err && <div className="mt-3"><ErrorNote>{err}</ErrorNote></div>}
       </Card>
@@ -66,30 +64,28 @@ export default function BatchPage() {
         <>
           <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
             <Stat label="Nasabah dinilai" value={int(res.n_rows)} />
-            <Stat label="Akan ditelepon" value={int(nCall)} note={`${topK}% teratas`} tone="accent" />
-            <Stat label="Rata-rata probabilitas terpilih" value={pct(avgSel)} />
-            <Stat label="Di atas batas default" value={int(res.n_predicted_yes)} note={`probabilitas ≥ ${pct(res.threshold)}`} />
+            <Stat label="Akan ditelepon" value={int(nCall)} note={`${topK}% teratas`} />
+            <Stat label="Rata-rata probabilitas" value={pct(avgSel)} note="nasabah terpilih" />
+            <Stat label="Di atas batas default" value={int(res.n_predicted_yes)} note={`≥ ${pct(res.threshold)}`} />
           </div>
-          <Card className="mt-4" title="Kapasitas telepon">
+          <Card className="mt-4" title="Persentase nasabah ditelepon">
             <div className="flex items-center gap-4">
               <input aria-label="Persentase nasabah yang ditelepon" type="range" min={1} max={100} value={topK} onChange={(e) => setTopK(Number(e.target.value))} className="w-full" />
               <span className="num w-14 text-right text-sm font-medium">{topK}%</span>
             </div>
           </Card>
-          <Card className="mt-4" title="Daftar nasabah terurut skor" hint={ranked.length > 100 ? "Menampilkan 100 teratas. Unduh CSV untuk daftar lengkap." : undefined}>
-            <div className="mb-3"><Button variant="ghost" onClick={exportResult}><Download size={16} />Unduh hasil</Button></div>
+          <Card className="mt-4" title={ranked.length > 100 ? "Nasabah terurut skor (100 teratas)" : "Nasabah terurut skor"}>
+            <div className="mb-3"><Button variant="ghost" onClick={exportResult}>Unduh hasil CSV</Button></div>
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] text-left text-sm">
-                <thead className="text-xs text-muted">
-                  <tr className="border-b border-border"><th className="py-2 pr-3">#</th><th className="pr-3">Baris</th><th className="pr-3">Umur</th><th className="pr-3">Pekerjaan</th><th className="pr-3">Bulan</th><th className="pr-3 text-right">Probabilitas</th><th>Status</th></tr>
-                </thead>
+                <thead><tr className="border-b border-border"><th className={th}>#</th><th className={th}>Baris</th><th className={th}>Umur</th><th className={th}>Pekerjaan</th><th className={th}>Bulan</th><th className={`${th} text-right`}>Probabilitas</th><th className={th}>Status</th></tr></thead>
                 <tbody>
                   {ranked.slice(0, 100).map((r) => (
-                    <tr key={r.row} className="border-b border-border/60">
+                    <tr key={r.row} className="border-b border-border/60 last:border-0">
                       <td className="num py-2 pr-3">{r.rank}</td><td className="num pr-3">{r.row + 2}</td>
                       <td className="pr-3">{r.src.age}</td><td className="pr-3">{r.src.job}</td><td className="pr-3">{r.src.month}</td>
                       <td className="num pr-3 text-right">{pct(r.probability)}</td>
-                      <td>{r.rank <= nCall ? <Badge tone="good">Telepon</Badge> : <Badge>Lewati</Badge>}</td>
+                      <td>{r.rank <= nCall ? <Tag strong>Telepon</Tag> : <Tag>Lewati</Tag>}</td>
                     </tr>
                   ))}
                 </tbody>
