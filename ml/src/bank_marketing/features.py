@@ -10,7 +10,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import FunctionTransformer, OneHotEncoder, StandardScaler
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from lightgbm import LGBMClassifier
 
 SEED = 42
 TARGET = "y"
@@ -70,5 +69,5 @@ def build_models():
         "Random Forest": _pipe(RandomForestClassifier(n_estimators=300, class_weight="balanced_subsample",
                                                       n_jobs=-1, random_state=SEED), False),
         "HistGradientBoosting": _pipe(HistGradientBoostingClassifier(class_weight="balanced", random_state=SEED), False),
-        "LightGBM": _pipe(LGBMClassifier(class_weight="balanced", n_jobs=-1, random_state=SEED, verbose=-1), False),
+        "LightGBM": _pipe(__import__("lightgbm").LGBMClassifier(class_weight="balanced", n_jobs=-1, random_state=SEED, verbose=-1), False),
     }

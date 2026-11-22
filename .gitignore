@@ -35,3 +35,4 @@ out/
 .vscode/
 .idea/
 *.log
+supabase/.temp/

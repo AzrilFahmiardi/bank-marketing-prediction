@@ -44,7 +44,7 @@ Endpoints: `GET /health`, `GET /metadata`, `POST /predict`, `POST /predict/batch
 
 Environment variables: `DATABASE_URL` (optional Postgres connection string for prediction logging), `CORS_ORIGINS` (comma-separated allowed origins), `CORS_ORIGIN_REGEX`.
 
-Deployment uses the Docker image built from a staged folder: `scripts/stage_api.sh <dir>`.
+The API is deployed as a Python function on Vercel from a staged folder (`scripts/stage_api.sh <dir>`, then `vercel deploy --prod`). The same folder also builds with `api/Dockerfile`.
 
 ## Web
 
@@ -56,3 +56,9 @@ npm run dev
 ```
 
 `NEXT_PUBLIC_API_URL` must point to the API.
+
+## Live
+
+- Dashboard: https://bank-marketing-web.vercel.app
+- API: https://bank-marketing-api.vercel.app (docs at `/docs`)
+- Database: Supabase Postgres (schema in `supabase/migrations`)
