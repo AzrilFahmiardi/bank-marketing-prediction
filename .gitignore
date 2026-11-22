@@ -1,0 +1,36 @@
+# AI assistant context
+CLAUDE.md
+.claude/
+AGENTS.md
+GEMINI.md
+.cursor/
+.cursorrules
+.mcp.json
+PLAN*.md
+TODO*.md
+NOTES*.md
+*tracker*.md
+*TRACKER*.md
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.vercel/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
