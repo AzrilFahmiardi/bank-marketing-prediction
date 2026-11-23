@@ -35,7 +35,7 @@ export function Tag({ children, strong }: { children: ReactNode; strong?: boolea
 
 export function Button({ className, variant = "primary", ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "ghost" }) {
   return (
-    <button {...rest} className={clsx("inline-flex items-center justify-center gap-2 rounded-md px-3.5 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50",
+    <button {...rest} className={clsx("inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-3.5 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50",
       variant === "primary" ? "bg-text text-white hover:bg-black/80" : "border border-border bg-surface hover:bg-soft", className)} />
   );
 }

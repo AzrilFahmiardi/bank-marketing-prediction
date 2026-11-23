@@ -78,12 +78,16 @@ export default function PredictPage() {
         <div className="lg:col-span-2">
           <div className="sticky top-4 space-y-4">
             <Card title="Coba contoh">
-              <ul className="-my-1 divide-y divide-border/60">
+              <ul className="space-y-2">
                 {EXAMPLES.map((x) => (
                   <li key={x.name}>
-                    <button type="button" onClick={() => { setForm({ ...x.values }); setRes(null); setErr(null); }} className="block w-full py-2.5 text-left hover:text-muted">
-                      <span className="block text-sm font-medium">{x.name}</span>
-                      <span className="block text-xs text-muted">{x.desc}</span>
+                    <button type="button" onClick={() => { setForm({ ...x.values }); setRes(null); setErr(null); }}
+                      className="group flex w-full cursor-pointer items-center justify-between gap-3 rounded-md border border-border px-3 py-2.5 text-left transition hover:border-text hover:bg-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text active:bg-border/60">
+                      <span className="min-w-0">
+                        <span className="block text-sm font-medium">{x.name}</span>
+                        <span className="block text-xs text-muted">{x.desc}</span>
+                      </span>
+                      <span aria-hidden className="shrink-0 text-xs text-muted transition group-hover:translate-x-0.5 group-hover:text-text">Isi →</span>
                     </button>
                   </li>
                 ))}
