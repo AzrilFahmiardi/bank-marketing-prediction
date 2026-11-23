@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 840" width="1700" height="840">
+<defs><filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/></filter><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#52525b"/></marker></defs>
+<rect width="1700" height="840" fill="#fff"/>
+<rect x="20" y="90" width="270" height="300" rx="16" fill="none" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="36" y="80" width="60.400000000000006" height="20" fill="#fff"/>
+<text x="44" y="95" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">Client</text>
+<rect x="40" y="140" width="230" height="90" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<circle cx="74" cy="180.0" r="6" fill="#71717a"/><path d="M62 199.0 a12 12 0 0 1 24 0Z" fill="#71717a"/>
+<text x="106" y="182.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Browser</text>
+<text x="106" y="202.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">analyst / sales team</text>
+<rect x="40" y="270" width="230" height="90" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<rect x="60" y="299.0" width="28" height="32" rx="4" fill="#e4e4e7" stroke="#71717a"/><text x="74" y="320.0" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="10" fill="#3f3f46">CSV</text>
+<text x="106" y="312.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">CSV upload</text>
+<text x="106" y="332.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">batch scoring</text>
+<rect x="330" y="40" width="1020" height="470" rx="26" fill="none" stroke="#52525b" stroke-width="2"/>
+<rect x="350" y="26" width="170" height="30" rx="8" fill="#fff" stroke="#d4d4d8"/>
+<path d="M368 33 L378 49 L358 49Z" fill="#18181b"/>
+<text x="390" y="46" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="16" font-weight="600" fill="#18181b">Vercel</text>
+<text x="446" y="46" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">production</text>
+<rect x="350" y="90" width="300" height="390" rx="16" fill="none" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="366" y="80" width="67.80000000000001" height="20" fill="#fff"/>
+<text x="374" y="95" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">Web app</text>
+<rect x="370" y="140" width="260" height="100" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<circle cx="404" cy="190.0" r="16" fill="#18181b"/><text x="404" y="196.0" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="700" fill="#fff">N</text>
+<text x="436" y="187.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Next.js 16</text>
+<text x="436" y="207.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">App Router, Tailwind</text>
+<rect x="370" y="290" width="260" height="100" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<rect x="390" y="324.0" width="28" height="32" rx="4" fill="#e4e4e7" stroke="#71717a"/><text x="404" y="345.0" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#3f3f46">{ }</text>
+<text x="436" y="337.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">metadata.json</text>
+<text x="436" y="357.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">metrics, ROC, EDA</text>
+<rect x="700" y="90" width="630" height="390" rx="16" fill="none" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="716" y="80" width="171.4" height="20" fill="#fff"/>
+<text x="724" y="95" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">API (Python function)</text>
+<rect x="720" y="140" width="590" height="190" rx="12" fill="#fff" stroke="#6366f1" stroke-width="1.8" filter="url(#sh)"/>
+<circle cx="754" cy="176" r="16" fill="#059488"/><path d="M756 167 L748 178 H754 L752 185 L760 174 H754Z" fill="#fff"/>
+<text x="786" y="173" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="18" font-weight="600" fill="#18181b">FastAPI</text>
+<text x="786" y="193" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">Pydantic validation, CORS</text>
+<rect x="740" y="222" width="118.8" height="26" rx="13" fill="#e0ecff" stroke="#93b4f5"/>
+<text x="799.4" y="239" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#1e3a8a">POST /predict</text>
+<rect x="866.8" y="222" width="164.4" height="26" rx="13" fill="#e0ecff" stroke="#93b4f5"/>
+<text x="949.0" y="239" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#1e3a8a">POST /predict/batch</text>
+<rect x="1039.2" y="222" width="118.8" height="26" rx="13" fill="#e0ecff" stroke="#93b4f5"/>
+<text x="1098.6000000000001" y="239" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#1e3a8a">GET /metadata</text>
+<rect x="740" y="258" width="111.19999999999999" height="26" rx="13" fill="#e0ecff" stroke="#93b4f5"/>
+<text x="795.6" y="275" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#1e3a8a">GET /history</text>
+<rect x="859.2" y="258" width="96.0" height="26" rx="13" fill="#e0ecff" stroke="#93b4f5"/>
+<text x="907.2" y="275" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#1e3a8a">GET /stats</text>
+<rect x="963.2" y="258" width="103.6" height="26" rx="13" fill="#e0ecff" stroke="#93b4f5"/>
+<text x="1015.0" y="275" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#1e3a8a">GET /health</text>
+<text x="740" y="312" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">occlusion factors vs reference customer, top-k% decision</text>
+<rect x="720" y="360" width="590" height="100" rx="12" fill="#fff" stroke="#f7931e" stroke-width="1.5" filter="url(#sh)"/>
+<circle cx="754" cy="410.0" r="16" fill="#f7931e"/><text x="754" y="416.0" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="15" font-weight="700" fill="#fff">RF</text>
+<text x="786" y="407.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Random Forest, Platt calibrated</text>
+<text x="786" y="427.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">scikit-learn 1.8, joblib model.joblib</text>
+<rect x="1380" y="90" width="300" height="390" rx="16" fill="none" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="1396" y="80" width="45.6" height="20" fill="#fff"/>
+<text x="1404" y="95" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">Data</text>
+<rect x="1400" y="140" width="260" height="100" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<circle cx="1434" cy="190.0" r="16" fill="#336791"/><text x="1434" y="196.0" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="15" font-weight="700" fill="#fff">Pg</text>
+<text x="1466" y="187.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Supabase Postgres</text>
+<text x="1466" y="207.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">predictions, batch_jobs</text>
+<rect x="1400" y="290" width="260" height="100" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<circle cx="1434" cy="340.0" r="16" fill="#336791"/><text x="1434" y="346.0" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="15" font-weight="700" fill="#fff">Pg</text>
+<text x="1466" y="337.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Pooler + RLS</text>
+<text x="1466" y="357.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">psycopg3, SSL, no policies</text>
+<rect x="20" y="560" width="1660" height="130" rx="16" fill="none" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="36" y="550" width="215.8" height="20" fill="#fff"/>
+<text x="44" y="565" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">Model development (offline)</text>
+<rect x="40" y="600" width="340" height="70" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<rect x="60" y="619.0" width="28" height="32" rx="4" fill="#e4e4e7" stroke="#71717a"/><text x="74" y="640.0" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="10" fill="#3f3f46">CSV</text>
+<text x="106" y="632.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Bank Marketing data</text>
+<text x="106" y="652.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">UCI, 41,188 rows</text>
+<rect x="440" y="600" width="440" height="70" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<rect x="460" y="619.0" width="28" height="32" rx="4" fill="#fff7ed" stroke="#f97316"/><text x="474" y="640.0" text-anchor="middle" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="11" fill="#c2410c">py</text>
+<text x="506" y="632.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Notebook + ml/src</text>
+<text x="506" y="652.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">rolling-window CV, tuning</text>
+<rect x="940" y="600" width="340" height="70" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<path d="M974 619.0 L988 627.0 V643.0 L974 651.0 L960 643.0 V627.0Z" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5"/>
+<text x="1006" y="632.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Artifacts</text>
+<text x="1006" y="652.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">model.joblib, metadata.json</text>
+<rect x="1340" y="600" width="320" height="70" rx="12" fill="#fff" stroke="#d4d4d8" stroke-width="1.5" filter="url(#sh)"/>
+<path d="M1360 649.0 L1374 619.0 L1388 649.0Z" fill="#18181b"/>
+<text x="1406" y="632.0" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#18181b">Deploy</text>
+<text x="1406" y="652.0" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">vercel deploy, supabase db push</text>
+<rect x="20" y="730" width="1660" height="85" rx="16" fill="none" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="36" y="720" width="97.4" height="20" fill="#fff"/>
+<text x="44" y="735" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">Engineering</text>
+<text x="60" y="767" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="16" font-weight="600" fill="#18181b">GitHub</text>
+<text x="60" y="788" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">source, semantic commits</text>
+<text x="330" y="767" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="16" font-weight="600" fill="#18181b">pytest</text>
+<text x="330" y="788" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">API tests</text>
+<text x="600" y="767" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="16" font-weight="600" fill="#18181b">Supabase CLI</text>
+<text x="600" y="788" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">SQL migrations</text>
+<text x="870" y="767" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="16" font-weight="600" fill="#18181b">Vercel CLI</text>
+<text x="870" y="788" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">web + API deploys</text>
+<text x="1140" y="767" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="16" font-weight="600" fill="#18181b">conda / pip</text>
+<text x="1140" y="788" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">pinned versions</text>
+<text x="1410" y="767" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="16" font-weight="600" fill="#18181b">Node 20</text>
+<text x="1410" y="788" font-family="'JetBrainsMonoNL Nerd Font Mono', 'DejaVu Sans Mono', monospace" font-size="12" fill="#71717a">Next.js build</text>
+<path d="M270 185 H370" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="320" cy="185" r="13" fill="#fff" stroke="#52525b" stroke-width="1.5"/><text x="320" y="190" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">1</text>
+<path d="M630 190 H720" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="675" cy="190" r="13" fill="#fff" stroke="#52525b" stroke-width="1.5"/><text x="675" y="195" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">2</text>
+<path d="M1310 190 H1400" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="1355" cy="190" r="13" fill="#fff" stroke="#52525b" stroke-width="1.5"/><text x="1355" y="195" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">3</text>
+<path d="M1005 330 V360" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="1005" cy="345" r="13" fill="#fff" stroke="#52525b" stroke-width="1.5"/><text x="1005" y="350" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">4</text>
+<path d="M500 240 V290" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="500" cy="265" r="13" fill="#fff" stroke="#52525b" stroke-width="1.5"/><text x="500" y="270" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">5</text>
+<path d="M1110 600 V460" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="1110" cy="530" r="13" fill="#fff" stroke="#52525b" stroke-width="1.5"/><text x="1110" y="535" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">6</text>
+<path d="M1010 600 V545 H500 V390" fill="none" stroke="#52525b" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ar)"/>
+<circle cx="760" cy="545" r="13" fill="#fff" stroke="#52525b" stroke-width="1.5"/><text x="760" y="550" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" fill="#27272a">7</text>
+<path d="M380 635 H440" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M880 635 H940" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M1280 635 H1340" fill="none" stroke="#52525b" stroke-width="2" marker-end="url(#ar)"/>
+</svg>
