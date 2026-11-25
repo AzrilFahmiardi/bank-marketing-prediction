@@ -1,8 +1,10 @@
 import io
 import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 import pandas as pd
+from dotenv import load_dotenv
 from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -11,6 +13,9 @@ from bank_marketing.features import RAW_FEATURES
 from . import db
 from .schemas import BatchResponse, Customer, PredictResponse
 from .service import ModelService
+
+# Local development: read api/.env if present. On Vercel there is no file, real env vars are used.
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 MAX_BATCH_ROWS = 20000
 state: dict = {}
